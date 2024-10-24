@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store - Crypto Wallet</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #eaeef1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 90%;
+            max-width: 800px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .product-section {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .product {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .product-name {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .product-price {
+            font-size: 18px;
+            color: #007BFF;
+        }
+
+        .buy-button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 14px;
+        }
+
+        .buy-button:hover {
+            background-color: #0056b3;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Store</h1>
+
+        <div class="product-section">
+            <h3>Cryptocurrency Listings</h3>
+            <div class="product">
+                <span class="product-name">Bitcoin (BTC)</span>
+                <span class="product-price">$25,000</span>
+                <button class="buy-button" onclick="buyProduct('Bitcoin (BTC)', 25000)">Buy</button>
+            </div>
+            <div class="product">
+                <span class="product-name">Ethereum (ETH)</span>
+                <span class="product-price">$1,600</span>
+                <button class="buy-button" onclick="buyProduct('Ethereum (ETH)', 1600)">Buy</button>
+            </div>
+            <div class="product">
+                <span class="product-name">Litecoin (LTC)</span>
+                <span class="product-price">$100</span>
+                <button class="buy-button" onclick="buyProduct('Litecoin (LTC)', 100)">Buy</button>
+            </div>
+        </div>
+
+        <div class="product-section">
+            <h3>Physical Goods</h3>
+            <div class="product">
+                <span class="product-name">T-Shirt</span>
+                <span class="product-price">$25</span>
+                <button class="buy-button" onclick="buyProduct('T-Shirt', 25)">Buy</button>
+            </div>
+            <div class="product">
+                <span class="product-name">Coffee Mug</span>
+                <span class="product-price">$15</span>
+                <button class="buy-button" onclick="buyProduct('Coffee Mug', 15)">Buy</button>
+            </div>
+            <div class="product">
+                <span class="product-name">Headphones</span>
+                <span class="product-price">$75</span>
+                <button class="buy-button" onclick="buyProduct('Headphones', 75)">Buy</button>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Buy and sell cryptocurrencies and physical goods with ease.</p>
+        </div>
+    </div>
+
+    <script>
+        let userBalance = 5000; // Example initial balance
+
+        function buyProduct(productName, price) {
+            if (userBalance >= price) {
+                userBalance -= price;
+                alert(`You have purchased ${productName} for $${price}. Your new balance is $${userBalance}.`);
+            } else {
+                alert(`Insufficient funds. Your balance is $${userBalance}.`);
+            }
+        }
+    </script>
+</body>
+</html>
